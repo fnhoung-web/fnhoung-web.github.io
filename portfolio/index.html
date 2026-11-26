@@ -178,6 +178,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+.avail { display: inline-flex; align-items: center; gap: 8px; margin: 24px 0 0; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-family: var(--f-mono); font-size: 13px; }
+.avail::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.avail + .cta { margin-top: 18px; }
+.cv-avail { margin-top: 6px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
 /* CV on screen */
 .bar { min-width: 6px; }
 .cv-bar { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; margin-bottom: 28px; }
@@ -222,7 +226,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .paper { border: 0; border-radius: 0; grid-template-columns: 62mm minmax(0, 1fr); }
   .cv-side { padding: 6mm; gap: 14px; }
   .cv-main { padding: 6mm 2mm 0 7mm; gap: 14px; }
-  .cv-photo { max-width: none; }
+  .cv-photo { max-width: none; aspect-ratio: 1 / .8; }
+  .cv-side { gap: 11px; }
+  .cv-side .cv-list { gap: 5px; }
   .cv-list, .cv-job ul, .cv-block p { font-size: 10.5px; }
   .cv-job { break-inside: avoid; padding-block: 8px; }
   .cv-block h3 { margin-bottom: 6px; }
@@ -251,6 +257,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <p class="role">Account Executive · Vente de solutions SaaS</p>
       <h1>Franck<br>Nhoung</h1>
       <p class="lead">Vente de solutions logicielles en environnement complexe. Dix-huit ans de vente, du conseil en magasin aux grands comptes SaaS, avec une culture de la performance et un vrai sens de l’écoute.</p>
+      <p class="avail">Disponible à partir du 4 décembre 2026</p>
       <div class="cta">
         <a class="btn primary" href="#contact">Me contacter</a>
         <a class="btn" href="#parcours">Voir le parcours</a>
@@ -305,9 +312,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <p class="co">MyCompanyFiles · groupe Visma France</p>
           <ul>
             <li>Chasse de clients grands comptes.</li>
-            <li>Construction d’un outil qui centralise la prospection : veille marché et suivi des prospects, interconnecté à Sales Navigator et HubSpot.</li>
+            <li>Construction, sur Claude AI, d’un outil qui centralise la prospection : veille marché et suivi des prospects, interconnecté à Sales Navigator et HubSpot.</li>
+            <li>Construction de la base de prospection avec Sales Navigator, appuyée par l’outil de prospection Zeliq.</li>
           </ul>
-          <span class="tag">Sales Navigator · HubSpot</span>
+          <span class="tag">Claude AI · Sales Navigator · Zeliq · HubSpot</span>
         </div>
       </article>
 
@@ -334,7 +342,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <ul>
             <li>Suivi commercial et vente en approche MEDDIC.</li>
             <li>Suivi et pilotage de l’activité commerciale pour garantir l’atteinte des objectifs quantitatifs et qualitatifs.</li>
-            <li>Spécialiste des solutions SaaS Quadra Entreprise, Quadra et Cegid Expert, Portail Collaboratif et Cegid Loop.</li>
+            <li>Spécialiste des solutions SaaS Quadra Entreprise, Quadra Expert et Cegid Expert, Portail Collaboratif et Cegid Loop.</li>
           </ul>
           <span class="tag">Président’s Club 2018 - 2019 · Top 20 monde · 137 %</span>
         </div>
@@ -388,20 +396,23 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <h3>Vente</h3>
           <ul>
             <li>Vente complexe en approche MEDDIC</li>
+            <li>Certification technique de vente MEDDIC, formation Uptoo</li>
             <li>Maîtrise des techniques de vente et de négociation</li>
             <li>Prospection et cold calling</li>
             <li>Pilotage de l’activité commerciale</li>
-            <li>Gestion d’un parc client en base installée</li>
+            <li>Gestion d’un parc client en base installée et fidélisation</li>
+            <li>IA au quotidien (Claude AI) : comptes rendus de réunion et construction d’outils mis à disposition des équipes commerciales</li>
           </ul>
         </div>
         <div>
           <h3>Produits et marché</h3>
           <ul>
-            <li>Solutions SaaS : Quadra Entreprise, Quadra, Cegid Expert, Portail Collaboratif, Cegid Loop</li>
+            <li>Solutions SaaS : Quadra Entreprise, Quadra Expert, Cegid Expert, Portail Collaboratif, Cegid Loop</li>
             <li>Cabinets grands comptes</li>
-            <li>Entreprises du Grand Lyon</li>
+            <li>Marché : début de carrière en grande distribution spécialisée (Darty, Boulanger), vente B2B dans l’IT, puis postes commerciaux dans la Fintech (Cegid, MyUnisoft, MyCompanyFiles)</li>
             <li>Équipement, maintenance, cloud, software</li>
-            <li>Outils de prospection : Sales Navigator, HubSpot</li>
+            <li>Outils de prospection : Sales Navigator, HubSpot, Zeliq</li>
+            <li>Outil de soutien à la vente : Modjo</li>
           </ul>
         </div>
         <div>
@@ -483,12 +494,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <h3>Compétences</h3>
             <ul class="cv-list">
               <li>Vente complexe, approche MEDDIC</li>
+              <li>Certification technique de vente MEDDIC, Uptoo</li>
               <li>Techniques de vente et de négociation</li>
               <li>Prospection et cold calling</li>
               <li>Pilotage de l’activité commerciale</li>
-              <li>Parc client en base installée</li>
-              <li>Solutions SaaS : Quadra Entreprise, Quadra, Cegid Expert, Portail Collaboratif, Cegid Loop</li>
-              <li>Sales Navigator, HubSpot</li>
+              <li>Parc client en base installée et fidélisation</li>
+              <li>Solutions SaaS : Quadra Entreprise, Quadra Expert, Cegid Expert, Portail Collaboratif, Cegid Loop</li>
+              <li>Sales Navigator, HubSpot, Zeliq</li>
+              <li>Outil de soutien à la vente : Modjo</li>
+              <li>IA au quotidien (Claude AI) : comptes rendus de réunion, outils pour les équipes commerciales</li>
             </ul>
           </div>
           <div class="cv-block">
@@ -516,6 +530,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="cv-head">
             <h2 class="cv-name">Franck Nhoung</h2>
             <p class="cv-role">Account Executive</p>
+            <p class="cv-avail">Disponible à partir du 4 décembre 2026</p>
           </div>
           <div class="cv-block">
             <h3>Profil</h3>
@@ -526,7 +541,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <div class="cv-job">
               <div class="cv-job-head"><b>Account Executive</b><span class="cv-date">Août 2026 - 3 décembre 2026</span></div>
               <p class="cv-co">MyCompanyFiles · groupe Visma France</p>
-              <ul><li>Chasse de clients grands comptes.</li><li>Construction d’un outil qui centralise la prospection : veille marché et suivi des prospects, interconnecté à Sales Navigator et HubSpot.</li></ul>
+              <ul><li>Chasse de clients grands comptes.</li><li>Construction, sur Claude AI, d’un outil qui centralise la prospection : veille marché et suivi des prospects, interconnecté à Sales Navigator et HubSpot.</li><li>Construction de la base de prospection avec Sales Navigator, appuyée par l’outil de prospection Zeliq.</li></ul>
             </div>
             <div class="cv-job">
               <div class="cv-job-head"><b>Key Account Executive</b><span class="cv-date">Mars 2024 - Novembre 2025</span></div>
@@ -536,7 +551,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <div class="cv-job">
               <div class="cv-job-head"><b>Ingénieur commercial</b><span class="cv-date">2017 - 2023</span></div>
               <p class="cv-co">Cegid</p>
-              <ul><li>Suivi commercial et vente en approche MEDDIC ; pilotage de l’activité pour atteindre les objectifs quantitatifs et qualitatifs.</li><li>Spécialiste des solutions SaaS Quadra Entreprise, Quadra et Cegid Expert, Portail Collaboratif et Cegid Loop.</li><li>Lauréat du Président’s Club 2018 - 2019 : Top 20 monde, 137 % de performance commerciale.</li></ul>
+              <ul><li>Suivi commercial et vente en approche MEDDIC ; pilotage de l’activité pour atteindre les objectifs quantitatifs et qualitatifs.</li><li>Spécialiste des solutions SaaS Quadra Entreprise, Quadra Expert et Cegid Expert, Portail Collaboratif et Cegid Loop.</li><li>Lauréat du Président’s Club 2018 - 2019 : Top 20 monde, 137 % de performance commerciale.</li></ul>
             </div>
             <div class="cv-job">
               <div class="cv-job-head"><b>Ingénieur commercial</b><span class="cv-date">2014 - 2016</span></div>
@@ -575,6 +590,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="c-row">
           <div><small>LinkedIn</small><a class="v" id="v-in" href="https://www.linkedin.com/in/franck-nhoung-91bb4b71" target="_blank" rel="noopener">linkedin.com/in/franck-nhoung-91bb4b71</a></div>
           <button class="copy" type="button" data-copy="https://www.linkedin.com/in/franck-nhoung-91bb4b71" data-src="v-in">Copier</button>
+        </div>
+        <div class="c-row">
+          <div><small>Disponibilité</small><span class="v" style="user-select:auto">À partir du 4 décembre 2026</span></div>
         </div>
         <div class="c-row">
           <div><small>Localisation</small><span class="v" style="user-select:auto">Tassin-la-Demi-Lune, Lyon · Permis B, véhiculé</span></div>
